@@ -1,11 +1,10 @@
 FROM debian:jessie
 
-LABEL maintainer "Artem Panchenko <kazar.artem@gmail.com>"
+LABEL maintainer = "Dmitry Zarva <zarv1k@gmail.com>"
 
-ARG steam_user=anonymous
-ARG steam_password=
-ARG metamod_version=1.20
-ARG amxmod_version=1.8.2
+ARG steam_user
+ARG steam_password
+ARG amxmod_version
 
 RUN apt update && apt install -y lib32gcc1 curl
 
@@ -34,7 +33,7 @@ ADD files/mapcycle.txt /opt/hlds/cstrike/mapcycle.txt
 
 # Install metamod
 RUN mkdir -p /opt/hlds/cstrike/addons/metamod/dlls
-RUN curl -sqL "http://prdownloads.sourceforge.net/metamod/metamod-$metamod_version-linux.tar.gz?download" | tar -C /opt/hlds/cstrike/addons/metamod/dlls -zxvf -
+COPY mod/metamod /opt/hlds/cstrike/addons/metamod/dlls
 ADD files/liblist.gam /opt/hlds/cstrike/liblist.gam
 # Remove this line if you aren't going to install/use amxmodx and dproto
 ADD files/plugins.ini /opt/hlds/cstrike/addons/metamod/plugins.ini

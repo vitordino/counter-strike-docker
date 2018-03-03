@@ -1,0 +1,19 @@
+version: "3.1"
+services:
+  server:
+    image: cs16docker:$IMAGE_TAG
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - steam_user=$STEAM_USER
+        - steam_password=$STEAM_PASSWORD
+        - amxmod_version=1.8.2
+    environment:
+      - START_MAP=${START_MAP:-de_dust2}
+      - ADMIN_STEAM=${ADMIN_STEAM:-0:1:1234566}
+      - SERVER_NAME=${SERVER_NAME:-CS 1.6 Server}
+      - MAXPLAYERS=${MAXPLAYERS:-32}
+    restart: always
+    ports:
+      - "27015:27015/udp"
