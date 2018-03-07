@@ -9,18 +9,18 @@ services:
         - steam_user=$STEAM_USER
         - steam_password=$STEAM_PASSWORD
         - amxmod_version=1.8.2
-    volumes:
-      - ./mod/yapb:/opt/hlds/cstrike/addons/yapb:rw
-      - ./files/plugins.ini:/opt/hlds/cstrike/addons/metamod/plugins.ini:rw
-      - ./files/server.cfg:/opt/hlds/cstrike/server.cfg
-      - ./files/amxx_yapbmenu.sma:/opt/hlds/cstrike/addons/amxmodx/scripting/amxx_yapbmenu.sma
-      - ./files/amxx_yapbmenu.amxx:/opt/hlds/cstrike/addons/amxmodx/plugins/amxx_yapbmenu.amxx
-      - ./files/amx_plugins.ini:/opt/hlds/cstrike/addons/amxmodx/configs/plugins.ini
+#    volumes:
+#      - ./files/server.cfg:/opt/hlds/cstrike/server.cfg
+#      - ./files/maps.ini:/opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
+#      - ./hlds_run.sh:/bin/hlds_run.sh
     environment:
       - START_MAP=${START_MAP:-de_dust2}
       - ADMIN_STEAM=${ADMIN_STEAM:-0:1:1234566}
       - SERVER_NAME=${SERVER_NAME:-CS 1.6 Server}
       - MAXPLAYERS=${MAXPLAYERS:-32}
+      - SERVER_PASSWORD
+      - YAPB_ENABLED
+      - YAPB_PASSWORD
     restart: always
     ports:
       - "27015:27015/udp"

@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 set -axe
+HLDS="/opt/hlds"
 
-CONFIG_FILE="/opt/hlds/startup.cfg"
+CONFIG_FILE="${HLDS}/startup.cfg"
 
 if [ -r "${CONFIG_FILE}" ]; then
     # TODO: make config save/restore mechanism more solid
@@ -14,7 +15,7 @@ fi
 
 EXTRA_OPTIONS=( "$@" )
 
-EXECUTABLE="/opt/hlds/hlds_run"
+EXECUTABLE="${HLDS}/hlds_run"
 GAME="${GAME:-cstrike}"
 MAXPLAYERS="${MAXPLAYERS:-32}"
 START_MAP="${START_MAP:-de_dust2}"
@@ -22,13 +23,31 @@ SERVER_NAME="${SERVER_NAME:-Counter-Strike 1.6 Server}"
 
 OPTIONS=( "-game" "${GAME}" "+maxplayers" "${MAXPLAYERS}" "+map" "${START_MAP}" "+hostname" "\"${SERVER_NAME}\"")
 
+
 if [ -z "${RESTART_ON_FAIL}" ]; then
     OPTIONS+=('-norestart')
 fi
 
+# AMX Admin User
 if [ -n "${ADMIN_STEAM}" ]; then
-    echo "\"STEAM_${ADMIN_STEAM}\" \"\"  \"abcdefghijklmnopqrstu\" \"ce\"" >> "/opt/hlds/cstrike/addons/amxmodx/configs/users.ini"
+    echo "\"STEAM_${ADMIN_STEAM}\" \"\"  \"abcdefghijklmnopqrstu\" \"ce\"" >> "${HLDS}/cstrike/addons/amxmodx/configs/users.ini"
 fi
+
+
+# Set Server Password
+if [ ! -z ${SERVER_PASSWORD} ]; then
+    echo "sv_password \"${SERVER_PASSWORD}\"" >> "/opt/hlds/cstrike/server.cfg"
+fi
+
+# Enable YaPB Bots
+if [ ! -z "${YAPB_ENABLED}" ];then
+    YAPB_PASSWORD="${YAPB_PASSWORD:-yapb}"
+
+    echo "linux addons/yapb/bin/yapb.so" >> "${HLDS}/cstrike/addons/metamod/plugins.ini"
+    echo "yb_password \"${YAPB_PASSWORD}\"" >> "${HLDS}/cstrike/addons/yapb/conf/yapb.cfg"
+    echo "amxx_yapbmenu.amxx      ; YAPB Menu" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
+fi
+
 
 set > "${CONFIG_FILE}"
 
