@@ -28,25 +28,45 @@ if [ -z "${RESTART_ON_FAIL}" ]; then
     OPTIONS+=('-norestart')
 fi
 
-# AMX Admin User
+# AMX Admin Steam Users
 if [ -n "${ADMIN_STEAM}" ]; then
-    echo "\"STEAM_${ADMIN_STEAM}\" \"\"  \"abcdefghijklmnopqrstu\" \"ce\"" >> "${HLDS}/cstrike/addons/amxmodx/configs/users.ini"
+    for steam_user in ${ADMIN_STEAM//,/ }
+    do
+        echo "\"${steam_user}\" \"\"  \"abcdefghijklmnopqrstu\" \"ce\"" >> "${HLDS}/cstrike/addons/amxmodx/configs/users.ini"
+    done
 fi
 
+# AMX Admin Users by IP
+if [ -n "${ADMIN_IP}" ]; then
+    for ip in ${ADMIN_IP//,/ }
+    do
+        echo "\"${ip}\" \"\"  \"abcdefghijklmnopqrstu\" \"de\"" >> "${HLDS}/cstrike/addons/amxmodx/configs/users.ini"
+    done
+fi
+
+# AMX Admin Users by Name
+if [ -n "${ADMIN_NAME}" ] && [ -n "${ADMIN_PASSWORD}" ]; then
+    for name in ${ADMIN_NAME//,/ }
+    do
+        echo "\"${name}\" \"${ADMIN_PASSWORD}\"  \"abcdefghijklmnopqrstu\" \"a\"" >> "${HLDS}/cstrike/addons/amxmodx/configs/users.ini"
+    done
+fi
 
 # Set Server Password
-if [ ! -z ${SERVER_PASSWORD} ]; then
+if [ -n ${SERVER_PASSWORD} ]; then
     echo "sv_password \"${SERVER_PASSWORD}\"" >> "/opt/hlds/cstrike/server.cfg"
 fi
 
 # Enable AMX Plugins
+echo "restmenu.amxx             ; Restrict Weapons" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
 echo "ultimate_sounds.amxx      ; Ultimate Sounds" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
 echo "deathbeams.amxx           ; Death Beams" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
 echo "resetscore.amxx           ; Reset Score" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
+echo "hsonly.amxx               ; HeadShot Only" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
 
 
 # Enable YaPB Bots
-if [ ! -z "${YAPB_ENABLED}" ];then
+if [ "${YAPB_ENABLED}" -eq 1 ];then
     YAPB_PASSWORD="${YAPB_PASSWORD:-yapb}"
 
     echo "linux addons/yapb/bin/yapb.so" >> "${HLDS}/cstrike/addons/metamod/plugins.ini"

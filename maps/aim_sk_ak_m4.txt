@@ -1,0 +1,25 @@
+Map:         aim_sk_ak_m4
+Weapons:     AK & M4
+Series:      aim_sk_series
+Copyright:   SK - Schroet Kommando
+Author:      Tazus
+Textures:    Pareeze 
+
+Install:
+Unzip all files in your cstrike folder.
+If you have steam, it should be something like:
+X:\Program Files\Steam\SteamApps\mail@mail.com\counter-strike\cstrike\
+
+For more aim_sk maps check out:
+http://www.schroet.com/maps.php
+
+For more maps by Tazus check out:
+http://www.tazusmaps.com 
+
+Contact:
+info@schroet.com
+http://www.schroet.com 
+#sk on irc.quakenet.org
+
+
+(Press Fire to Continue)

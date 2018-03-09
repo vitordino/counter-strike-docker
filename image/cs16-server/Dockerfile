@@ -16,6 +16,11 @@ COPY --chown=cstrike:cstrike mod/deathbeams/deathbeams.amxx /opt/hlds/cstrike/ad
 # Install Reset Score AMX Plugin
 COPY --chown=cstrike:cstrike mod/resetscore/resetscore.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/resetscore.amxx
 
+# Install HeadShot Only AMX Plugin
+COPY --chown=cstrike:cstrike mod/hsonly/hsonly.sma /opt/hlds/cstrike/addons/amxmodx/scripting/hsonly.sma
+COPY --chown=cstrike:cstrike mod/hsonly/hsonly.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/hsonly.amxx
+COPY --chown=cstrike:cstrike mod/hsonly/hs_only.txt /opt/hlds/cstrike/addons/amxmodx/data/lang/hs_only.txt
+
 # Install YaPB Bots
 COPY --chown=cstrike:cstrike mod/yapb /opt/hlds/cstrike/addons/yapb
 COPY --chown=cstrike:cstrike mod/yapbmenu/amxx_yapbmenu.sma /opt/hlds/cstrike/addons/amxmodx/scripting/amxx_yapbmenu.sma

@@ -1,0 +1,8 @@
+[en] 
+HS_MODE_ON = [HS Only] Only head shots can hit players !! 
+
+[fr] 
+HS_MODE_ON = [HS Only] Seuls les tirs &#224; la t&#234;te touchent !! 
+
+[pl] 
+HS_MODE_ON = [HS Only] Zabic mozna tylko headshotem !!
