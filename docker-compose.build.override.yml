@@ -1,0 +1,11 @@
+version: "3.1"
+services:
+  hlds:
+    image: hlds-amxmodx:latest
+    build:
+      context: .
+      dockerfile: image/hlds-amxmodx/Dockerfile
+      args:
+        - steam_user=$STEAM_USER
+        - steam_password=$STEAM_PASSWORD
+        - amxmod_version=1.8.2

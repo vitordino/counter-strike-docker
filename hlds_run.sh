@@ -39,6 +39,12 @@ if [ ! -z ${SERVER_PASSWORD} ]; then
     echo "sv_password \"${SERVER_PASSWORD}\"" >> "/opt/hlds/cstrike/server.cfg"
 fi
 
+# Enable AMX Plugins
+echo "ultimate_sounds.amxx      ; Ultimate Sounds" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
+echo "deathbeams.amxx           ; Death Beams" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
+echo "resetscore.amxx           ; Reset Score" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
+
+
 # Enable YaPB Bots
 if [ ! -z "${YAPB_ENABLED}" ];then
     YAPB_PASSWORD="${YAPB_PASSWORD:-yapb}"

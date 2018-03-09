@@ -1,0 +1,110 @@
+[en]
+KNIFE_MSG_1 = %s Sliced And Diced %s!
+KNIFE_MSG_2 = %s Slashed %s!
+KNIFE_MSG_3 = %s Shanked %s!
+KNIFE_MSG_4 = %s Pulled A Knife On %s!
+KNIFE_MSG_5 = %s Knifed %s!
+
+NOHP_MSG_1 = %i terrorist vs %i CT^n%s: Now All Depends On You!
+NOHP_MSG_2 = %i terrorist vs %i CT^n%s: I Hope You Still Have A Healthpack.
+NOHP_MSG_3 = %i terrorist vs %i CT^n%s: All Your Teammates Were Killed. Good Luck!
+NOHP_MSG_4 = %i terrorist vs %i CT^n%s: You are the last man standing!
+NOHP_MSG_5 = %i terrorist vs %i CT^n%s: Now You Are Alone. Have Fun!
+
+HP_MSG_1 = %i terrorist vs %i CT^n%s (%i hp): Now All Depend On You!
+HP_MSG_2 = %i terrorist vs %i CT^n%s (%i hp): I Hope You Still Have A Healthpack.
+HP_MSG_3 = %i terrorist vs %i CT^n%s (%i hp): All Your Teammates Were Killed. Good Luck!
+HP_MSG_4 = %i terrorist vs %i CT^n%s (%i hp): You are the last man standing!
+HP_MSG_5 = %i terrorist vs %i CT^n%s (%i hp): Now You Are Alone. Have Fun!
+
+KILL_STREAK = * You are on a killstreak with %d kills.
+DEATH_STREAK = * Take care, you are on a deathstreak with %d deaths in a row.
+
+
+[sv]
+KNIFE_MSG_1 = %s skar s'o'nder %s!
+KNIFE_MSG_2 = %s skar upp %s!
+KNIFE_MSG_3 = %s kuttade %s!
+KNIFE_MSG_4 = %s drog kniven mot %s!
+KNIFE_MSG_5 = %s 'a'gde %s!
+
+NOHP_MSG_1 = %i terrorist vs %i CT^n%s: Nu h'a'nger allt pa dig!
+NOHP_MSG_2 = %i terrorist vs %i CT^n%s: Jag hoppas att du fortfarande har bandage.
+NOHP_MSG_3 = %i terrorist vs %i CT^n%s: Alla dina lagkamrater blev d'o'dade. Lycka till!
+NOHP_MSG_4 = %i terrorist vs %i CT^n%s: Du 'a'r den sista kvar!
+NOHP_MSG_5 = %i terrorist vs %i CT^n%s: Nu 'a'r du ensam. Ha kul!
+
+HP_MSG_1 = %i terrorist vs %i CT^n%s (%i hp): Nu h'a'nger allt pa dig!
+HP_MSG_2 = %i terrorist vs %i CT^n%s (%i hp): Jag hoppas att du fortfarande har bandage.
+HP_MSG_3 = %i terrorist vs %i CT^n%s (%i hp): Alla dina lagkamrater blev d'o'dade. Lycka till!
+HP_MSG_4 = %i terrorist vs %i CT^n%s (%i hp): Du 'a'r den sista kvar!
+HP_MSG_5 = %i terrorist vs %i CT^n%s (%i hp): Nu 'a'r du ensam. Ha kul!
+
+KILL_STREAK = * Du 'a'r pa en m'o'rdarturne med %d frags.
+DEATH_STREAK = * Se upp, du har d'o'tt %d ganger i rad.
+
+[bp]
+KNIFE_MSG_1 = %s fatiou e serviu %s!
+KNIFE_MSG_2 = %s cortou %s!
+KNIFE_MSG_3 = %s fatiou %s!
+KNIFE_MSG_4 = %s puxou a faca e estripou %s!
+KNIFE_MSG_5 = %s esfaqueou %s!
+
+NOHP_MSG_1 = %i terrorist vs %i CT^n%s: Agora todos dependem de voce!
+NOHP_MSG_2 = %i terrorist vs %i CT^n%s: Esperamos que voce tenha bastante life.
+NOHP_MSG_3 = %i terrorist vs %i CT^n%s: Todos seus colegas de equipe foram mortos. Boa sorte!
+NOHP_MSG_4 = %i terrorist vs %i CT^n%s: Voce e o ultimo de sua equipe!
+NOHP_MSG_5 = %i terrorist vs %i CT^n%s: Agora voce esta sozinho. Divirta-se!
+
+HP_MSG_1 = %i terrorist vs %i CT^n%s (%i hp): Agora todos dependem de voce!
+HP_MSG_2 = %i terrorist vs %i CT^n%s (%i hp): Esperamos que voce tenha bastante life.
+HP_MSG_3 = %i terrorist vs %i CT^n%s (%i hp): Todos seus colegas de equipe foram mortos. Boa sorte!
+HP_MSG_4 = %i terrorist vs %i CT^n%s (%i hp): Voce e o ultimo de sua equipe!
+HP_MSG_5 = %i terrorist vs %i CT^n%s (%i hp): Agora voce esta sozinho. Divirta-se!
+
+KILL_STREAK = * Voce matou %d sem morrer ate agora.
+DEATH_STREAK = * Cuidado, voce morreu %d rounds seguidos ate agora.
+
+[de]
+KNIFE_MSG_1 = %s schnitt %s in kleine Wuerfel!
+KNIFE_MSG_2 = %s schlitzte %s auf!
+KNIFE_MSG_3 = %s zerteilte %s!
+KNIFE_MSG_4 = %s zueckte das Messer gegen %s!
+KNIFE_MSG_5 = %s erstach %s!
+
+NOHP_MSG_1 = %i Terroristen gegen %i CT^n%s: Nun haengt alles von dir ab!
+NOHP_MSG_2 = %i Terroristen gegen %i CT^n%s: Ich hoffe du hast noch eine Verbandstasche.
+NOHP_MSG_3 = %i Terroristen gegen %i CT^n%s: Alle deine Teamkameraden wurden getoetet. Viel glueck!
+NOHP_MSG_4 = %i Terroristen gegen %i CT^n%s: Du bist der letzte ueberlebende!
+NOHP_MSG_5 = %i Terroristen gegen %i CT^n%s: Nun bist du alleine. Viel Spass!
+
+HP_MSG_1 = %i Terroristen gegen %i CT^n%s (%i hp): Nun haengt alles von dir ab!
+HP_MSG_2 = %i Terroristen gegen %i CT^n%s (%i hp): Ich hoffe du hast noch eine Verbandstasche.
+HP_MSG_3 = %i Terroristen gegen %i CT^n%s (%i hp): Alle deine Teamkameraden wurden getoetet. Viel glueck!
+HP_MSG_4 = %i Terroristen gegen %i CT^n%s (%i hp): Du bist der letzte Ueberlebende!
+HP_MSG_5 = %i Terroristen gegen %i CT^n%s (%i hp): Nun bist du alleine. Viel Spass!
+
+KILL_STREAK = * Du hast jetzt %d in Folge getoetet.
+DEATH_STREAK = * Pass auf! Du wurdest bereits %d mal in Folge getoetet.
+
+[nl]
+KNIFE_MSG_1 = %s hakte %s in stukjes!
+KNIFE_MSG_2 = %s sneed %s!
+KNIFE_MSG_3 = %s schudde %s!
+KNIFE_MSG_4 = %s stak een mes in%s!
+KNIFE_MSG_5 = %s stook %s neer met een mes!
+
+NOHP_MSG_1 = %i terroristen vs %i CT's^n%s: Jij bent de enige hoop!
+NOHP_MSG_2 = %i terroristen vs %i CT's^n%s: Ik hoop dat je nog extra levens hebt.
+NOHP_MSG_3 = %i terroristen vs %i CT's^n%s: Al jouw teammaten zijn dood. Veel geluk!
+NOHP_MSG_4 = %i terroristen vs %i CT's^n%s: Je bent de laatst levende man!
+NOHP_MSG_5 = %i terroristen vs %i CT's^n%s: Nu ben je alleen. Veel plezier!
+
+HP_MSG_1 = %i terroristen vs %i CT's^n%s (%i hp): Jij bent de enige hoop!
+HP_MSG_2 = %i terroristen vs %i CT's^n%s (%i hp): Ik hoop dat je nog extra levens hebt.
+HP_MSG_3 = %i terroristen vs %i CT's^n%s (%i hp): Al jouw teammaten zijn dood. Veel geluk!
+HP_MSG_4 = %i terroristen vs %i CT's^n%s (%i hp): Je bent de laatst levende man!
+HP_MSG_5 = %i terroristen vs %i CT's^n%s (%i hp): Nu ben je alleen. Veel plezier!
+
+KILL_STREAK = * Je bent op een massamoord met %d mensen gedood te hebben.
+DEATH_STREAK = * Pas op, je bent zwak, je bent %d keer doodgegaan in een rij.

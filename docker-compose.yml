@@ -1,17 +1,13 @@
 version: "3.1"
 services:
   server:
-    image: cs16docker:$IMAGE_TAG
+    image: cs16-server:$IMAGE_TAG
     build:
       context: .
-      dockerfile: Dockerfile
-      args:
-        - steam_user=$STEAM_USER
-        - steam_password=$STEAM_PASSWORD
-        - amxmod_version=1.8.2
+      dockerfile: image/cs16-server/Dockerfile
 #    volumes:
-#      - ./files/server.cfg:/opt/hlds/cstrike/server.cfg
-#      - ./files/maps.ini:/opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
+#      - ./config/server.cfg:/opt/hlds/cstrike/server.cfg
+#      - ./config/maps.ini:/opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
 #      - ./hlds_run.sh:/bin/hlds_run.sh
     environment:
       - START_MAP=${START_MAP:-de_dust2}

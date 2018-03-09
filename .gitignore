@@ -1,3 +1,6 @@
 .idea
 
 .env
+
+temp
+docker-compose.override.yml
