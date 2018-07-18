@@ -8,7 +8,7 @@ ARG amxmod_version
 
 RUN useradd -ms /bin/bash cstrike
 
-RUN apt-get update && apt-get install -y lib32gcc1 curl  && rm -rf /var/lib/apt/lists/* && chown cstrike:cstrike /opt
+RUN apt-get update && apt-get install -y lib32gcc1 curl unzip && rm -rf /var/lib/apt/lists/* && chown cstrike:cstrike /opt
 
 USER cstrike
 
@@ -38,8 +38,12 @@ RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-cstrike-li
 RUN mkdir -p /opt/hlds/cstrike/addons/dproto
 COPY --chown=cstrike:cstrike mod/dproto/dproto_i386.so /opt/hlds/cstrike/addons/dproto/dproto_i386.so
 
+# Install CSDM
+RUN curl -sqL 'https://www.bailopan.net/csdm/files/csdm-2.1.2.zip' -o '/opt/csdm.zip' && \
+    unzip -u '/opt/csdm.zip' -d /opt/hlds/cstrike/ && rm -f '/opt/csdm.zip'
+
 USER root
-RUN apt-get autoremove -y && apt remove -y curl
+RUN apt-get remove -y curl unzip && apt-get autoremove -y
 USER cstrike
 
 WORKDIR /opt/hlds
