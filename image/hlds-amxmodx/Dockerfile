@@ -8,24 +8,21 @@ ARG amxmod_version
 
 RUN useradd -ms /bin/bash cstrike
 
-RUN apt update && apt install -y lib32gcc1 curl \
-    && chown cstrike:cstrike /opt
+RUN apt-get update && apt-get install -y lib32gcc1 curl  && rm -rf /var/lib/apt/lists/* && chown cstrike:cstrike /opt
 
 USER cstrike
 
 # Install SteamCMD
-RUN mkdir -p /opt/steam && cd /opt/steam && \
+RUN mkdir -p /opt/steam /opt/hlds && cd /opt/steam && \
     curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
 
 # Install HLDS
-RUN mkdir -p /opt/hlds
 # Workaround for "app_update 90" bug, see https://forums.alliedmods.net/showthread.php?p=2518786
-RUN /opt/steam/steamcmd.sh +login $steam_user $steam_password +force_install_dir /opt/hlds +app_update 90 validate +quit
-RUN /opt/steam/steamcmd.sh +login $steam_user $steam_password +force_install_dir /opt/hlds +app_update 70 validate +quit || :
-RUN /opt/steam/steamcmd.sh +login $steam_user $steam_password +force_install_dir /opt/hlds +app_update 10 validate +quit || :
-RUN /opt/steam/steamcmd.sh +login $steam_user $steam_password +force_install_dir /opt/hlds +app_update 90 validate +quit
-RUN mkdir -p ~/.steam && ln -s /opt/hlds ~/.steam/sdk32
-RUN ln -s /opt/steam/ /opt/hlds/steamcmd
+RUN /opt/steam/steamcmd.sh +login $steam_user $steam_password +force_install_dir /opt/hlds +app_update 90 validate +quit; \
+    /opt/steam/steamcmd.sh +login $steam_user $steam_password +force_install_dir /opt/hlds +app_update 70 validate +quit || \
+    /opt/steam/steamcmd.sh +login $steam_user $steam_password +force_install_dir /opt/hlds +app_update 10 validate +quit || \
+    /opt/steam/steamcmd.sh +login $steam_user $steam_password +force_install_dir /opt/hlds +app_update 90 validate +quit
+RUN mkdir -p ~/.steam && ln -s /opt/hlds ~/.steam/sdk32 && ln -s /opt/steam/ /opt/hlds/steamcmd
 COPY --chown=cstrike:cstrike image/hlds-amxmodx/steam_appid.txt /opt/hlds/steam_appid.txt
 
 # Install metamod
@@ -42,7 +39,7 @@ RUN mkdir -p /opt/hlds/cstrike/addons/dproto
 COPY --chown=cstrike:cstrike mod/dproto/dproto_i386.so /opt/hlds/cstrike/addons/dproto/dproto_i386.so
 
 USER root
-RUN apt remove -y curl
+RUN apt-get autoremove -y && apt remove -y curl
 USER cstrike
 
 WORKDIR /opt/hlds

@@ -13,10 +13,10 @@ Build & run
 2. Build image with HLDS Server. It includes raw Steam HLDS + Metamod + DProto + AMX MOD X:
 
     ```
-    $ docker-compose -f build.yml build hlds
+    $ docker-compose build hlds
     ```
 
-3. Build custom server image based on hlds image. It includes maps, configuration and the other customization staff:
+3. Build custom server image based on hlds image. It includes maps, configuration and the other customization stuff:
  
     ```
     $ docker-compose build server
@@ -27,7 +27,7 @@ Build & run
 5. Start your server:
 
     ```
-    $ docker-compose up -d
+    $ docker-compose up -d server
     ```
 
 6. Enjoy ;)

@@ -1,14 +1,19 @@
 version: "3.1"
 services:
+  hlds:
+    image: hlds-amxmodx:latest
+    build:
+      context: .
+      dockerfile: image/hlds-amxmodx/Dockerfile
+      args:
+        - steam_user=${STEAM_USER:-anonymous}
+        - steam_password=$STEAM_PASSWORD
+        - amxmod_version=1.8.2
   server:
     image: cs16-server:$IMAGE_TAG
     build:
       context: .
       dockerfile: image/cs16-server/Dockerfile
-#    volumes:
-#      - ./config/server.cfg:/opt/hlds/cstrike/server.cfg
-#      - ./config/maps.ini:/opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
-#      - ./hlds_run.sh:/bin/hlds_run.sh
     environment:
       - SERVER_NAME=${SERVER_NAME:-CS 1.6 Server}
       - START_MAP=${START_MAP:-de_dust2}
