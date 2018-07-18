@@ -7,9 +7,6 @@ USER cstrike
 # Install Deathbeams AMX plugin
 COPY --chown=cstrike:cstrike mod/deathbeams/deathbeams.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/deathbeams.amxx
 
-# Install Reset Score AMX Plugin
-COPY --chown=cstrike:cstrike mod/resetscore/resetscore.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/resetscore.amxx
-
 # Install HeadShot Only AMX Plugin
 COPY --chown=cstrike:cstrike mod/hsonly/hsonly.sma /opt/hlds/cstrike/addons/amxmodx/scripting/hsonly.sma
 COPY --chown=cstrike:cstrike mod/hsonly/hsonly.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/hsonly.amxx
