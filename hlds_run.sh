@@ -50,10 +50,10 @@ if [ -n ${SERVER_PASSWORD} ]; then
 fi
 
 # Enable AMX Plugins
-echo "restmenu.amxx             ; Restrict Weapons" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
-echo "deathbeams.amxx           ; Death Beams" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
-echo "resetscore.amxx           ; Reset Score" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
-echo "hsonly.amxx               ; HeadShot Only" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
+# echo "restmenu.amxx             ; Restrict Weapons" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
+# echo "deathbeams.amxx           ; Death Beams" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
+# echo "resetscore.amxx           ; Reset Score" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
+# echo "hsonly.amxx               ; HeadShot Only" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
 
 
 # Enable YaPB Bots
