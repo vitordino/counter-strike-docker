@@ -1,5 +1,5 @@
-CS 1.6 HLDS + AMX MOD X
-=======================
+# CS 1.6 HLDS + AMX MOD X + CSDM
+
 
 Build & run
 -----------
