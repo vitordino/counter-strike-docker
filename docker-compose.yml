@@ -7,7 +7,7 @@ services:
       dockerfile: image/hlds-amxmodx/Dockerfile
       args:
         - steam_user=${STEAM_USER:-anonymous}
-        - steam_password=$STEAM_PASSWORD
+        - steam_password=${STEAM_PASSWORD:-''}
         - amxmod_version=1.8.2
   server:
     image: cs16-server:$IMAGE_TAG
@@ -18,7 +18,6 @@ services:
       - SERVER_NAME=${SERVER_NAME:-CS 1.6 Server}
       - START_MAP=${START_MAP:-de_dust2}
       - MAXPLAYERS=${MAXPLAYERS:-32}
-      - ADMIN_STEAM
       - ADMIN_IP
       - ADMIN_NAME
       - ADMIN_PASSWORD

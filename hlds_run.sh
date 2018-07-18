@@ -28,14 +28,6 @@ if [ -z "${RESTART_ON_FAIL}" ]; then
     OPTIONS+=('-norestart')
 fi
 
-# AMX Admin Steam Users
-if [ -n "${ADMIN_STEAM}" ]; then
-    for steam_user in ${ADMIN_STEAM//,/ }
-    do
-        echo "\"${steam_user}\" \"\"  \"abcdefghijklmnopqrstu\" \"ce\"" >> "${HLDS}/cstrike/addons/amxmodx/configs/users.ini"
-    done
-fi
-
 # AMX Admin Users by IP
 if [ -n "${ADMIN_IP}" ]; then
     for ip in ${ADMIN_IP//,/ }
