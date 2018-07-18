@@ -41,6 +41,10 @@ COPY --chown=cstrike:cstrike mod/dproto/dproto_i386.so /opt/hlds/cstrike/addons/
 # Install CSDM
 RUN curl -sqL 'https://www.bailopan.net/csdm/files/csdm-2.1.2.zip' -o '/opt/csdm.zip' && \
     unzip -u '/opt/csdm.zip' -d /opt/hlds/cstrike/ && rm -f '/opt/csdm.zip'
+    
+# Patch CSDM https://forums.alliedmods.net/showpost.php?p=1909682&postcount=27?p=1909682&postcount=27
+RUN curl -sqL 'https://forums.alliedmods.net/attachment.php?attachmentid=116910&d=1362864766' -o '/opt/patch.zip' && \
+    unzip -jfo '/opt/patch.zip' -d /opt/hlds/cstrike/addons/amxmodx/modules && rm -f '/opt/patch.zip'
 
 USER root
 RUN apt-get remove -y curl unzip && apt-get autoremove -y
