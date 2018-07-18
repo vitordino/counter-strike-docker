@@ -4,12 +4,6 @@ LABEL maintainer = "Dmitry Zarva <zarv1k@gmail.com>"
 
 USER cstrike
 
-# Install Ultimate Sounds AMX plugin
-COPY --chown=cstrike:cstrike mod/ultimate_sounds/misc/* /opt/hlds/cstrike/sound/misc/
-COPY --chown=cstrike:cstrike mod/ultimate_sounds/ultimate_sounds.sma /opt/hlds/cstrike/addons/amxmodx/scripting/ultimate_sounds.sma
-COPY --chown=cstrike:cstrike mod/ultimate_sounds/ultimate_sounds.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/ultimate_sounds.amxx
-COPY --chown=cstrike:cstrike mod/ultimate_sounds/ultimate_sounds.txt /opt/hlds/cstrike/addons/amxmodx/data/lang/ultimate_sounds.txt
-
 # Install Deathbeams AMX plugin
 COPY --chown=cstrike:cstrike mod/deathbeams/deathbeams.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/deathbeams.amxx
 
