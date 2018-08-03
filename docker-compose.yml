@@ -24,6 +24,7 @@ services:
       - SERVER_PASSWORD
       - YAPB_ENABLED
       - YAPB_PASSWORD
+      - CSDM_MODE
     restart: always
     ports:
       - "27015:27015/udp"
