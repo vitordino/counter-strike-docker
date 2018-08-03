@@ -43,6 +43,7 @@ if [ -n "${ADMIN_NAME}" ] && [ -n "${ADMIN_PASSWORD}" ]; then
     do
         echo "\"${name}\" \"${ADMIN_PASSWORD}\"  \"abcdefghijklmnopqrstu\" \"a\"" >> "${HLDS}/cstrike/addons/amxmodx/configs/users.ini"
     done
+    echo "rcon_password \"${ADMIN_PASSWORD}\"" >> "${HLDS}/cstrike/server.cfg"
 fi
 
 # Set Server Password
@@ -77,6 +78,7 @@ fi
 
 if [ "${CSDM_MODE}" -ge 2 ]; then
      echo 'csdm_ffa_enable "1"' >> "${HLDS}/cstrike/server.cfg"
+     echo 'mp_freeforall "1"' >> "${HLDS}/cstrike/server.cfg"
 fi
 
 set > "${CONFIG_FILE}"
