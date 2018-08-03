@@ -70,6 +70,7 @@ fi
 # Enable CSDM
 if [ "${CSDM_MODE}" -ge 1 ]; then
      echo 'csdm_active "1"' >> "${HLDS}/cstrike/server.cfg"
+     sed -ri 's/^menus =.*/menus = ps/; s/^autoitems =.*/autoitems = g/' "${HLDS}/cstrike/addons/amxmodx/configs/csdm.cfg"
 else
     echo 'csdm_active "0"' >> "${HLDS}/cstrike/server.cfg"
 fi
