@@ -20,6 +20,7 @@ GAME="${GAME:-cstrike}"
 MAXPLAYERS="${MAXPLAYERS:-32}"
 START_MAP="${START_MAP:-de_dust2}"
 SERVER_NAME="${SERVER_NAME:-Counter-Strike 1.6 Server}"
+CSDM_MODE="${CSDM_MODE:-0}"
 
 OPTIONS=( "-game" "${GAME}" "+maxplayers" "${MAXPLAYERS}" "+map" "${START_MAP}" "+hostname" "\"${SERVER_NAME}\"")
 
@@ -62,6 +63,16 @@ if [ "${YAPB_ENABLED}" -eq 1 ];then
     echo "linux addons/yapb/bin/yapb.so" >> "${HLDS}/cstrike/addons/metamod/plugins.ini"
     echo "yb_password \"${YAPB_PASSWORD}\"" >> "${HLDS}/cstrike/addons/yapb/conf/yapb.cfg"
     echo "amxx_yapbmenu.amxx      ; YAPB Menu" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
+fi
+
+if [ "${CSDM_MODE}" -ge 1 ]; then
+     echo 'csdm_active "1"' >> "/opt/hlds/cstrike/server.cfg"
+else
+    echo 'csdm_active "0"' >> "/opt/hlds/cstrike/server.cfg"
+fi
+
+if [ "${CSDM_MODE}" -ge 2 ]; then
+     echo 'csdm_ffa_enable "1"' >> "/opt/hlds/cstrike/server.cfg"
 fi
 
 
