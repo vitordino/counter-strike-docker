@@ -55,6 +55,8 @@ fi
 # echo "deathbeams.amxx           ; Death Beams" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
 # echo "hsonly.amxx               ; HeadShot Only" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
 
+# Disable AMX Messages
+sed -ri 's/(adminhelp|multilingual|adminchat|antiflood|scrollmsg|imessage|adminvote)\.amxx.*//g' "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
 
 # Enable YaPB Bots
 if [ "${YAPB_ENABLED}" -eq 1 ];then
