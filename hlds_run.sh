@@ -47,7 +47,7 @@ fi
 
 # Set Server Password
 if [ -n ${SERVER_PASSWORD} ]; then
-    echo "sv_password \"${SERVER_PASSWORD}\"" >> "/opt/hlds/cstrike/server.cfg"
+    echo "sv_password \"${SERVER_PASSWORD}\"" >> "${HLDS}/cstrike/server.cfg"
 fi
 
 # Enable AMX Plugins
@@ -65,16 +65,16 @@ if [ "${YAPB_ENABLED}" -eq 1 ];then
     echo "amxx_yapbmenu.amxx      ; YAPB Menu" >> "${HLDS}/cstrike/addons/amxmodx/configs/plugins.ini"
 fi
 
+# Enable CSDM
 if [ "${CSDM_MODE}" -ge 1 ]; then
-     echo 'csdm_active "1"' >> "/opt/hlds/cstrike/server.cfg"
+     echo 'csdm_active "1"' >> "${HLDS}/cstrike/server.cfg"
 else
-    echo 'csdm_active "0"' >> "/opt/hlds/cstrike/server.cfg"
+    echo 'csdm_active "0"' >> "${HLDS}/cstrike/server.cfg"
 fi
 
 if [ "${CSDM_MODE}" -ge 2 ]; then
-     echo 'csdm_ffa_enable "1"' >> "/opt/hlds/cstrike/server.cfg"
+     echo 'csdm_ffa_enable "1"' >> "${HLDS}/cstrike/server.cfg"
 fi
-
 
 set > "${CONFIG_FILE}"
 
