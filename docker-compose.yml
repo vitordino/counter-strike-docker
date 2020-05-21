@@ -28,3 +28,4 @@ services:
     restart: always
     ports:
       - "27015:27015/udp"
+      - "27015:27015/tcp"
