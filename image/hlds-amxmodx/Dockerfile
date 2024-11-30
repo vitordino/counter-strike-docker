@@ -8,7 +8,7 @@ ARG amxmod_version
 
 RUN useradd -ms /bin/bash cstrike
 
-RUN apt-get update && apt-get install -y lib32gcc-s1 curl unzip && rm -rf /var/lib/apt/lists/* && chown cstrike:cstrike /opt
+RUN apt-get update && apt-get install -y lib32stdc++6 lib32gcc-s1 curl unzip && rm -rf /var/lib/apt/lists/* && chown cstrike:cstrike /opt
 
 USER cstrike
 
