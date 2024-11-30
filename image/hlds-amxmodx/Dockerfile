@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:bullseye
 
 LABEL maintainer = "Dmitry Zarva <zarv1k@gmail.com>"
 
